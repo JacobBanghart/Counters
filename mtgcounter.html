@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<head><style>
+#p1_area,#p2_area{margin-top:9%;}#p3_area,#p4_area{margin-top:6%;}#player_change1,#player_change2,#player_change3{top:30px;border:1px solid black;height:60px;font-size:40px;background-color:black; color:yellow;}#player_change1{position:absolute;left:0;width:33.333333333%;}#player_change2{position:absolute;left:33%;width:33.3333333%;}#player_change3{position:absolute;right:0;width:34%;}#p1{color:yellow;}#p2{color:red;}#p3{color:white}#p4{color:blue}#p2,#p1,#p3,#p4{border:1px solid black;width:100%;background-color:black;}#p1,#p2,#p1name , #p2name,#p3,#p3name,#p4,#p4name{font-size:60px;text-align:center;}#p1name,#p2name,#p3name,#p4name{width:100%;background-color:black;border:1px solid black;}#p1name{color:yellow;}#p2name{color:red}#p3name{color:white}#p4name{color:blue}#p1_area{float:left;background-color:black;color:yellow;}#p3_area{float:left;background-color:black;color:white;}body{background-color:black;}#p2_area{float:right;background-color:black;color:red;}#p4_area{float:right;background-color:black;color:blue;}#button,#button2,#button3,#button4{font-size:50px;border:1px solid black}#button{background-color:black;color:yellow;}#button2{background-color:black;color:red;}#button3{background-color:black;color:white;}#button4{background-color:black;color:blue;}
+</style>
+<script>var p1_health=20;var p2_health=20;var p3_health=20;var p4_health=20;
+function sub50(num){
+if (num === 1 && p1_health >= 1){p1_health-=1;document.getElementById("p1").value=p1_health;}
+if (num === 2 && p2_health >= 1){p2_health-=1;document.getElementById("p2").value=p2_health;}
+if (num === 3 && p3_health >= 1){p3_health-=1;document.getElementById("p3").value=p3_health;}
+if (num === 4 && p4_health >= 1){p4_health-=1;document.getElementById("p4").value=p4_health;}
+}
+function sub100(num){
+if (num === 1 && p1_health >= 5){p1_health-=5;document.getElementById("p1").value=p1_health}
+else if (num === 1 && p1_health < 5){p1_health=0;document.getElementById("p1").value=p1_health}
+if (num === 2 && p2_health>=5){p2_health-=5;document.getElementById("p2").value=p2_health;}
+else if (num === 2 && p2_health<5){p2_health=0;document.getElementById("p2").value=p2_health;}
+
+if (num === 3 && p3_health>=5){p3_health-=5;document.getElementById("p3").value=p3_health;}
+else if (num === 3 && p3_health<5){p2_health=0;document.getElementById("p3").value=p3_health;}
+
+if (num === 4 && p4_health>=5){p4_health-=5;document.getElementById("p4").value=p4_health;}
+else if (num === 4 && p4_health<5){p4_health=0;document.getElementById("p4").value=p4_health;}
+}
+
+function sub1000(num){
+if (num === 1 && p1_health >= 10){p1_health-=10;document.getElementById("p1").value=p1_health}
+else if (num === 1 && p1_health < 10){p1_health=0;document.getElementById("p1").value=p1_health}
+if (num === 2 && p2_health >= 10){p2_health-=10;document.getElementById("p2").value=p2_health;}
+else if (num === 2 && p2_health < 10){p2_health=0;document.getElementById("p2").value=p2_health;}
+
+if (num === 3 && p3_health >= 10){p3_health-=10;document.getElementById("p3").value=p3_health;}
+else if (num === 3 && p3_health < 10){p3_health=0;document.getElementById("p3").value=p3_health;}
+
+if (num === 4 && p4_health >= 10){p4_health-=10;document.getElementById("p4").value=p4_health;}
+else if (num === 4 && p4_health < 10){p4_health=0;document.getElementById("p4").value=p4_health;}
+}; 
+
+function add50(num){
+if (num === 1){p1_health+=1;document.getElementById("p1").value=p1_health;}
+if (num === 2){p2_health+=1;document.getElementById("p2").value=p2_health;}
+if (num === 3){p3_health+=1;document.getElementById("p3").value=p3_health;}
+if(num === 4){p4_health+=1;document.getElementById("p4").value=p4_health;}
+}
+function add100(num){
+if (num === 1){p1_health+=5;document.getElementById("p1").value=p1_health}
+if (num === 2){p2_health+=5;document.getElementById("p2").value=p2_health;}
+if (num === 3){p3_health+=5;document.getElementById("p3").value=p3_health;}
+if(num === 4){p4_health+=5;document.getElementById("p4").value=p4_health;}
+}
+function add1000(num){
+if (num === 1){p1_health+=10;document.getElementById("p1").value=p1_health}
+if (num === 2){p2_health+=10;document.getElementById("p2").value=p2_health;}
+if (num === 3){p3_health+=10;document.getElementById("p3").value=p3_health;}
+if(num === 4){p4_health+=10;document.getElementById("p4").value=p4_health;}
+}
+function reset(num){
+if (num === 1){p1_health=40;document.getElementById("p1").value=p1_health}
+if(num === 2){p2_health=40;document.getElementById("p2").value=p2_health}
+if(num === 3){p3_health=40;document.getElementById("p3").value=p3_health}
+if(num === 4){p4_health=40;document.getElementById("p4").value=p4_health}
+}
+
+function changename(num){changenamevalue = prompt("What is the name you want? Typing nothing in sets it to default.");
+if (changenamevalue.length===0){
+if(num ===1){document.getElementById("p1name").value="Player 1"}
+if(num === 2){document.getElementById("p2name").value="Player 2"}
+if(num === 3){document.getElementById("p3name").value="Player 3"}
+if (num === 4) {document.getElementById("p4name").value="Player 4"}
+}
+else{
+if (num === 1 ){document.getElementById("p1name").value=changenamevalue}
+if(num === 2){document.getElementById("p2name").value=changenamevalue}
+if(num === 3){document.getElementById("p3name").value=changenamevalue}
+if(num === 4){document.getElementById("p4name").value=changenamevalue}}}
+
+function changenumber(num){changenumbervalue = prompt("What is the number you want?");
+if(changenumbervalue > 0){
+if (num === 1 ){p1_health=Number(changenumbervalue);document.getElementById("p1").value=p1_health}
+if (num === 2){p2_health=Number(changenumbervalue);document.getElementById("p2").value=p2_health}
+if (num === 3){p3_health=Number(changenumbervalue);document.getElementById("p3").value=p3_health}
+else if(num === 4){p4_health=Number(changenumbervalue);document.getElementById("p4").value=p4_health}
+}
+else{if(num===1){reset(1)}if(num === 2){reset(2)}if(num === 3){reset(3)}else if(num === 4){reset(4)}}}
+</script>
+</head><body>
+<div id="player_number">
+<input type="button" id="player_change1" value="2 Players" onclick="document.getElementById('p3_area').style.display = 'none';document.getElementById('p3name').style.display = 'none';document.getElementById('p3').style.display = 'none';document.getElementById('button3').style.display = 'none';document.getElementById('p4_area').style.display = 'none';document.getElementById('p4name').style.display = 'none';document.getElementById('p4').style.display = 'none';document.getElementById('button4').style.display = 'none';"/>
+<input value="3 Players" type="button" id="player_change2" onclick="document.getElementById('p3_area').style.display = 'inline-block';document.getElementById('p3name').style.display = 'inline-block';document.getElementById('p3').style.display = 'inline-block';document.getElementById('button3').style.display = 'inline-block';document.getElementById('p4_area').style.display = 'none';document.getElementById('p4name').style.display = 'none';document.getElementById('p4').style.display = 'none';document.getElementById('button4').style.display = 'none';"/>
+<input value="4 Players" type="button" id="player_change3" onclick="document.getElementById('p3_area').style.display = 'inline-block';document.getElementById('p3name').style.display = 'inline-block';document.getElementById('p3').style.display = 'inline-block';document.getElementById('button3').style.display = 'inline-block';document.getElementById('p4_area').style.display = 'inline-block';document.getElementById('p4name').style.display = 'inline-block';document.getElementById('p4').style.display = 'inline-block';document.getElementById('button4').style.display = 'inline-block';"/></div>
+<div id="p1_area">
+<input id="p1name" type="button" value="Player 1" onclick="changename(1)"/>
+<div><input  id="p1" type="button" onclick="changenumber(1)"/></div>
+<input type='button' id="button" onclick='sub1000(1)' value="-10"/>
+<input type='button' id="button" onclick='sub100(1)' value="-5"/>
+<input type='button' id="button" onclick='sub50(1)' value="-1"/>
+<input id='button' type='button' value='Reset' onclick='reset(1)'/>
+<input type='button' id="button" onclick='add50(1)' value="+1"/>
+<input type='button' id="button" onclick='add100(1)' value="+5"/>
+<input type='button' id="button" onclick='add1000(1)' value="+10"/>
+</div>
+<div id="p2_area">
+<input id="p2name" type="button" value="Player 2" onclick="changename(2)"/>
+<div><input  id="p2" type="button" onclick="changenumber(2)"/></div>
+<input type='button' id="button2" onclick='sub1000(2)' value="-10"/>
+<input type='button' id="button2" onclick='sub100(2)' value="-5"/>
+<input type='button' id="button2" onclick='sub50(2)' value="-1"/>
+<input id='button2' type='button' value="Reset" onclick='reset(2)'/>
+<input type='button' id="button2" onclick='add50(2)' value="+1"/>
+<input type='button' id="button2" onclick='add100(2)' value="+5"/>
+<input type='button' id="button2" onclick='add1000(2)' value="+10"/>
+</div>
+<div id="p3_area">
+<input id="p3name" type="button" value="Player 3" onclick="changename(3)"/>
+<div><input  id="p3" type="button" onclick="changenumber(3)"/></div>
+<input type='button' id="button3" onclick='sub1000(3)' value="-10"/>
+<input type='button' id="button3" onclick='sub100(3)' value="-5"/>
+<input type='button' id="button3" onclick='sub50(3)' value="-1"/>
+<input id='button3' type='button' value="Reset" onclick='reset(3)'/>
+<input type='button' id="button3" onclick='add50(3)' value="+1"/>
+<input type='button' id="button3" onclick='add100(3)' value="+5"/>
+<input type='button' id="button3" onclick='add1000(3)' value="+10"/>
+</div>
+<div id="p4_area">
+<input id="p4name" type="button" value="Player 4" onclick="changename(4)"/>
+<div><input  id="p4" type="button" onclick="changenumber(4)"/>
+<input id="poison" type="button" onclick='change'/>
+</div><input type='button' id="button4" onclick='sub1000(4)' value="-10"/>
+<input type='button' id="button4" onclick='sub100(4)' value="-5"/>
+<input type='button' id="button4" onclick='sub50(4)' value="-1"/>
+<input id='button4' type='button' value="Reset" onclick='reset(4)'/>
+<input type='button' id="button4" onclick='add50(4)' value="+1"/>
+<input type='button' id="button4" onclick='add100(4)' value="+5"/>
+<input type='button' id="button4" onclick='add1000(4)' value="+10"/>
+</div>
+<script>
+document.getElementById("p1").value=p1_health;
+document.getElementById("p2").value=p2_health;
+document.getElementById("p3").value=p3_health;
+document.getElementById("p4").value=p4_health;
+document.getElementById('p3_area').style.display = 'none';
+document.getElementById('p3name').style.display = 'none';
+document.getElementById('p3').style.display = 'none';
+document.getElementById('button3').style.display = 'none';
+document.getElementById('p4_area').style.display = 'none';
+document.getElementById('p4name').style.display = 'none';
+document.getElementById('p4').style.display = 'none';
+document.getElementById('button4').style.display = 'none';
+</script>
+</body>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<head><style>#p1,#p2{font-size:40px;text-align:center;}#p1_area{float:left;}#p2_area{float:right;}#button{font-size:30px;}</style>
+<script>var p1_helth=8000;var p2_helth=8000;window.setInterval(function(){document.getElementById("p1").innerHTML=' '+ p1_helth +'';document.getElementById("p2").innerHTML=''+ p2_helth +'';},1);
+function sub50(num){if (num === 1){p1_helth-=50}if (num === 2){p2_helth-=50}}function sub100(num){if (num === 1){p1_helth-=100}if (num === 2){p2_helth-=100}}function sub1000(num){if (num === 1){p1_helth-=1000}if (num === 2){p2_helth-=1000}}; 
+function add50(num){if (num === 1){p1_helth+=50}if (num === 2){p2_helth+=50}}function add100(num){if (num === 1){p1_helth+=100}if (num === 2){p2_helth+=100}}function add1000(num){if (num === 1){p1_helth+=1000}if (num === 2){p2_helth+=1000}}
+function reset(num){if (num === 1){p1_helth=8000}if(num === 2){p2_helth=8000}}
+</script>
+</head><body>
+<div id="p1_area">
+<div id="p1"></div><input type='button' id="button" onclick='sub1000(1)' value="-1000"></input><input type='button' id="button" onclick='sub100(1)' value="-100"></input><input type='button' id="button" onclick='sub50(1)' value="-50"></input><input id=button type=button value='Reset' onclick='reset(1)'><input type='button' id="button" onclick='add50(1)' value="+50"></input><input type='button' id="button" onclick='add100(1)' value="+100"></input><input type='button' id="button" onclick='add1000(1)' value="+1000"></input>
+</div>
+<div id="p2_area">
+<div id="p2"></div><input type='button' id="button" onclick='sub1000(2)' value="-1000"></input><input type='button' id="button" onclick='sub100(2)' value="-100"></input><input type='button' id="button" onclick='sub50(2)' value="-50"></input><input id=button type=button value="Reset" onclick='reset(2)'></input><input type='button' id="button" onclick='add50(2)' value="+50"></input><input type='button' id="button" onclick='add100(2)' value="+100"></input><input type='button' id="button" onclick='add1000(2)' value="+1000"></input>
+</div>
+</body>
